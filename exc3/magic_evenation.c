@@ -6,7 +6,7 @@ int main()
  
  
  
- printf("%.2f %.2f %.2f", xcp,ycp,zcp);
+ printf("%d %d", input-1,1);
 
  return 0;
 }
