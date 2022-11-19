@@ -7,6 +7,9 @@ int main () {
 	
 	switch (x){ 		// switch cannot get a float as argument since 
 				// it can't store it for the exact amount
+				/* multi
+				 * line comment
+				 */ 
 
 		case 1: 
 			y++; 
