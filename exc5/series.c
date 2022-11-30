@@ -23,7 +23,7 @@ int main (){
 		else
 			unsigned_term=term;
 //		i++;
-	//	printf ("%d term: %.3f sum: %.3f\n",i,term,sum);
+		printf ("%d term: %.3f sum: %.3f\n",i,term,sum);
 	}	
 //	}while (term >= accuracy);
 
