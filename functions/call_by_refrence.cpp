@@ -28,7 +28,8 @@ int main () {
 	int x=3,y=4;
 	bad_swap (x,y);
 	cout << x << y;
-	good_swap (x,y);
+	good_swap (x,y); // we can't put numbers in arguments. since it is call by refrence we
+			 // have to put a variable name in here.
 	cout << x << y;
 
 }
