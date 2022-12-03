@@ -8,9 +8,11 @@ int power (int,int);		// prototype
 				//
 				// in libraries we only declare functions with
 				// prototypes in .h files
-				// in definde the function in a .c file with the 
-				// same name
-				//
+				// and define the function in a .c file that will
+				// get linked after compile. this is by default 
+				// done for popular libraries.
+				// if we're defining a library ourselves, we have to 
+				// specify the .c file within gcc
 int main () {
 
 	printf ("%d",power(1,2));
