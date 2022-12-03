@@ -1,6 +1,8 @@
 #include <stdio.h>
 
-
+    // function signature//
+    // ||
+    // V	   //
 int power (int,int);		// prototype
 				// only declare that there's power funtion
 int main () {
