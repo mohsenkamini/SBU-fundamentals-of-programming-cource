@@ -8,7 +8,8 @@ int number_of_digits (unsigned int number){
 	// number_of_digits (10) returns 2
 	// number_of_digits (1345) returns 4
 
-	int i,powered_10=10;
+	int i;
+	unsigned long int powered_10=10;
 	for (i=1 ; (number % powered_10) != number ; i++){
 		powered_10*=10;
 	}
@@ -27,7 +28,7 @@ int cut_from_left (unsigned int number, int how_many_digits){
 
 	// cut_from_left (5401,2) returns 1
 	// cut_from_left (435601,3) returns 601
-	int powered_10=pow( 10 , number_of_digits(number) - how_many_digits );
+	unsigned long int powered_10=pow( 10 , number_of_digits(number) - how_many_digits );
 	return number % powered_10; 
 	
 }
@@ -39,10 +40,12 @@ int armans_mind (unsigned int input,unsigned int limit) {
 	{
 		if (input > limit)
 		{
-//			cout << "1. input: " << input << " limit: " << limit << " end1" << endl;
+//			cout << "1. input: " << input << " limit: " << limit << " nod: "<< number_of_digits(limit) <<" end1" << endl;
+//			cout << " separate_from_left (input,number_of_digits(limit): " << separate_from_left (input,number_of_digits(limit)) << endl;
 			if (separate_from_left (input,number_of_digits(limit)) > limit )
 			{
 				unsigned int input_zero_check = cut_from_left (input,number_of_digits(limit)-1);
+//				cout << " input_zero_check: " << input_zero_check << endl;
 				if (input_zero_check != 0)
 				{
 					cout << separate_from_left (input,number_of_digits(limit)-1) << "-";
@@ -50,7 +53,7 @@ int armans_mind (unsigned int input,unsigned int limit) {
 				}
 				else
 				{
-					cout << separate_from_left (input,number_of_digits(limit)-1);
+					cout << separate_from_left (input,number_of_digits(limit)-1) << endl;
 					flag=true;
 				}
 //			cout << "2. input: " << input << " limit: " << limit << " end2" << endl ;
@@ -58,6 +61,7 @@ int armans_mind (unsigned int input,unsigned int limit) {
 			else
 			{
 				unsigned int input_zero_check = cut_from_left (input,number_of_digits(limit));
+//				cout << " input_zero_check: " << input_zero_check << endl;
 				if (input_zero_check != 0)
 				{	
 					cout << separate_from_left (input,number_of_digits(limit)) << "-";
@@ -65,7 +69,7 @@ int armans_mind (unsigned int input,unsigned int limit) {
 				}
 				else
 				{
-					cout << separate_from_left (input,number_of_digits(limit));
+					cout << separate_from_left (input,number_of_digits(limit)) << endl;
 					flag=true;
 				}
 //			cout << "3. input: " << input << " limit: " << limit << " end3" << endl ;
