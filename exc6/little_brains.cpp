@@ -42,14 +42,32 @@ int armans_mind (unsigned int input,unsigned int limit) {
 //			cout << "1. input: " << input << " limit: " << limit << " end1" << endl;
 			if (separate_from_left (input,number_of_digits(limit)) > limit )
 			{
-				cout << separate_from_left (input,number_of_digits(limit)-1) << "-";
-				input = cut_from_left (input,number_of_digits(limit)-1);
+				unsigned int input_zero_check = cut_from_left (input,number_of_digits(limit)-1);
+				if (input_zero_check != 0)
+				{
+					cout << separate_from_left (input,number_of_digits(limit)-1) << "-";
+					input = cut_from_left (input,number_of_digits(limit)-1);
+				}
+				else
+				{
+					cout << separate_from_left (input,number_of_digits(limit)-1);
+					flag=true;
+				}
 //			cout << "2. input: " << input << " limit: " << limit << " end2" << endl ;
 			}
 			else
 			{
-				cout << separate_from_left (input,number_of_digits(limit)) << "-";
-				input = cut_from_left (input,number_of_digits(limit));
+				unsigned int input_zero_check = cut_from_left (input,number_of_digits(limit));
+				if (input_zero_check != 0)
+				{	
+					cout << separate_from_left (input,number_of_digits(limit)) << "-";
+					input = cut_from_left (input,number_of_digits(limit));
+				}
+				else
+				{
+					cout << separate_from_left (input,number_of_digits(limit));
+					flag=true;
+				}
 //			cout << "3. input: " << input << " limit: " << limit << " end3" << endl ;
 				
 			}
