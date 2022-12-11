@@ -1,24 +1,22 @@
 #include <iostream>
 using namespace std;
 
-int sum_of_numbers (int n, int &sum){
+int sum_of_numbers (int n){
 	
 	if (n==0)
-		return sum;
+		return 0;
 	int input;
 	cin >> input ;
-	sum+=input;
-	sum+=sum_of_numbers(n-1,sum);
+	return input + sum_of_numbers(n-1);
 }
 
 
 int main () {
 
-	int sum=0;
 	int n;
 	cin >> n;
 
-	cout << sum_of_numbers(n,sum);
+	cout << sum_of_numbers(n);
 
 }
 
