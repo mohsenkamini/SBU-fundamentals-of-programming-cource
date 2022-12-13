@@ -25,4 +25,9 @@ int main () {
 	
 	// array traverse (peymayesh)
 	// use array_1[i] in a for loop for instance.
+	
+	// arrays can't be assigned to another array:
+	// int a[4]={1,2,3,4};
+	// int b[4];
+	// b=a // returns a compile error
 }
