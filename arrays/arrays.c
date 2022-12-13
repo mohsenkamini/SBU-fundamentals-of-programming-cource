@@ -16,4 +16,13 @@ int main () {
 						// a number. NOT a variable
 						// it could also be driven from
 						// #define lines.
+						// it has to be exactly known to the compiler
+						// cannot get it from a variable that does not 
+						// have an exact known value. the array length 
+						// can't be derived in runtime. it has to be defined
+						// on compile time.
+	int array_1[4]={1,2,3,4};		// array initilization
+	
+	// array traverse (peymayesh)
+	// use array_1[i] in a for loop for instance.
 }
