@@ -3,6 +3,8 @@
 
 void f (int array[],int size_of_array, int n){//}
 			   //
+void multi-dimensional (int m_array[][3][4][5],int size_i);	// we can only omit the rows' size
+								// but have to define the others
 int main () {
 
 	int a[4];
