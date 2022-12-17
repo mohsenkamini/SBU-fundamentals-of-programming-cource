@@ -1,6 +1,25 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
+
+double pow(float base, float power) 
+{
+	double result=1.0;
+	if (power == 0.0 )
+		return result;
+	if (base == 1 )
+		return result;
+	if (power > 0.0 )
+	{
+		for (int i =1 ; i <= power ; i++ )
+			result*=base;
+	}
+	else
+	{
+		for (int i = -1 ; i >= power ; i--)
+			result/=base;
+	}
+	return result;
+}
 
 int number_of_digits (unsigned long int number){
 
@@ -103,7 +122,8 @@ unsigned long int abbases_series (int n)
 
 int main () {
 
-	unsigned long int input;
+	unsigned long int input,input2;
+	//float input,input2;
 	cin >> input;
 
 
