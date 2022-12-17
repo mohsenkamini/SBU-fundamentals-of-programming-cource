@@ -2,15 +2,13 @@
 
 unsigned long int factorial (unsigned long int n ) {
 	
-	if (n == 1)
+	if (n == 1 || n ==0)
 		return 1;
 	return n*factorial(n-1);
 }
 
 unsigned long int combination (unsigned long int n,unsigned long int r) {
 
-	if (n-r == 0)
-		return 1;
 	return factorial(n)/(factorial(r)*factorial(n-r));
 }
 
@@ -51,8 +49,8 @@ unsigned long int equal_part (unsigned long int number_of_runners) {
 	if (number_of_runners == 2)
 		return 1;
 	unsigned long int result=0;
-	for (unsigned long int i=2 ; i <= number_of_runners ;i++ ){
-		result += (combination(number_of_runners,i) * non_equal_part(number_of_runners-i+1));
+	for (unsigned long int i=2 ; i < number_of_runners ;i++ ){
+		result += ((combination(number_of_runners,i) * non_equal_part(number_of_runners-i+1)));
 	}
 	return result;
 	
@@ -68,6 +66,7 @@ int main () {
 
 	unsigned long int n;
 	scanf ("%lu",&n);
+//	printf ("%lu\n",equal_part(n-1));
 
 	printf("%lu",number_of_possible_results(n));
 
