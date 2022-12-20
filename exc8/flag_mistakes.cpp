@@ -30,9 +30,9 @@ void parallel_bubble_sort (int count_array[],char wicked_chars_array[], int size
 
     if (size == 0)
         return;
-    cout << count_array[0] << "  "  << count_array[1] << "  "  << count_array[2] << "  " << count_array[3];
-    cout << endl;
-    for (int i =0 ; i < size ; i++)
+//    cout << count_array[0] << "  "  << count_array[1] << "  "  << count_array[2] << "  " << count_array[3];
+//    cout << endl;
+    for (int i =0 ; i < size-1 ; i++)
     {
         if ( count_array[i] > count_array[i+1]  )
         {
@@ -64,10 +64,10 @@ int main () {
     {
         count_array[i] = count_mistakes(text,size,wicked_chars_array[i]);
     }
-    for (int i =0 ; i <4 ; i++)
-    {
-        cout << wicked_chars_array[i] << ": " << count_array[i] << endl;
-    }
+//    for (int i =0 ; i <4 ; i++)
+//    {
+//        cout << wicked_chars_array[i] << ": " << count_array[i] << endl;
+//    }
 
     parallel_bubble_sort(count_array,wicked_chars_array,4);
 
