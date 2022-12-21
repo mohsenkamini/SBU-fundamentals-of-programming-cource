@@ -44,6 +44,7 @@ int main () {
 
 	cout << p[2] ;  // we can use pointers like arrays too. this is equal to a[2]
 
-
+	// wild pointer. is not initilized with a value.
+	int *wild_poiner;
 
 }
