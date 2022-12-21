@@ -36,10 +36,11 @@ int main () {
 	int a[2]={0,1};
 	int* p ;
 	p = a ; // a is equal to &a[0]
-
+	
+	// a=p ; this is not possible and a cannot be changed
 	int x = *p ; // x=0 which is a[0]
 
-	
+
 
 
 
