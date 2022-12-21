@@ -22,5 +22,25 @@ int main () {
 
 	printf("%f",*pamount);		// prints the value of amount
 	printf("%f",*(&amount));	// prints the value of amount
+
+
+
+	int y=0;
+	int *yptr;
+	yptr=&y;
+	int m = *yptr;
+
+	int** pointer2pointer = &yptr;
+
+
+	int a[2]={0,1};
+	int* p ;
+	p = a ; // a is equal to &a[0]
+
+	int x = *p ; // x=0 which is a[0]
+
 	
+
+
+
 }
