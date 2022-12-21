@@ -42,6 +42,8 @@ int main () {
 
 	cout << p+1; 	// because a is an integer, this equals address of a + sizeof(int) which equals the address of a[1]
 
+	cout << p[2] ;  // we can use pointers like arrays too. this is equal to a[2]
+
 
 
 }
