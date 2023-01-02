@@ -19,20 +19,24 @@ bool check_integrity (char words[][max_name_length]) {
     for (int i=0 ; words[0][i]!= '\0' ; i++ ) {
         if (words[0][i] == ' ')
         {
-            break;
+            //cout << "1\n";
+            continue;
         }
-        if (words[0][i] <='A')
+        if (words[0][i] <'A')
         {
+            //cout << "2\n";
             flag=false;
             break;
         }
-        if (words[0][i] >='z')
+        if (words[0][i] >'z')
         {
+            //cout << "3" << words[0][i] << "    " << i << "\n";
             flag=false; 
             break;
         }
-        if (words[0][i] <='Z' && words[0][i] <='a')
+        if (words[0][i] >'Z' && words[0][i] <'a')
         {
+            //cout << "4\n";
             flag=false;
             break;
         }
@@ -55,8 +59,8 @@ int get_difference (char words[][max_name_length]) {
 void translate (char words[][max_name_length]) {
     
     int difference=get_difference(words);
-    int temp=0;
-    for (int i=0 ; words[0][i]!= '\0' ; i++ ) {
+    int temp=0,i;
+    for (i=0 ; words[0][i]!= '\0' ; i++ ) {
         temp=words[0][i]+difference;
         if (temp >= 'A' && temp <= 'Z' )
             words[1][i]=temp;
@@ -73,6 +77,7 @@ void translate (char words[][max_name_length]) {
             }
         }
     }
+    words[1][i]='\0';
 
 
 
@@ -82,7 +87,7 @@ int main () {
     char sentences[max_number_of_strings][max_name_length];
     
     fill_the_list(sentences);
-    cout << check_integrity(sentences) << endl;
+    //cout << check_integrity(sentences) << endl;
     switch (check_integrity(sentences)) {
         case 1:
             break;
