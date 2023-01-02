@@ -3,11 +3,16 @@
 #define max_name_length 100
 using namespace std;
 
+
 void print_the_array_of_strings (char array[][max_name_length],int size) 
 {
 	for (int i =0 ; i < size ; i++)
-		cout << array[i] << "\n";
-    cout << endl;
+    {   
+        //for (int j=0 ; j < 5  ; j++)
+		    cout << array[i];
+        cout << endl ;
+    }
+    //cout << endl ;
 }
 
 int min (int num1,int num2) {
@@ -35,11 +40,22 @@ int fill_the_list (char names[][max_name_length],char end_char) {
 
 }
 
-void swap_pointers (char x[] , char y[]) {
-    char* temp[1];
-    temp [1] = x;
-    x=y;
-    y=temp[1];
+void swap_pointers (char array[][max_name_length],int i1, int i2) {
+    char temp[1][max_name_length];
+    int i;
+    for (i=0 ; array[i1][i]!='\0';i++)
+        temp[0][i]=array[i1][i];
+    temp[0][i]='\0';
+
+    for (i=0 ; array[i2][i]!='\0';i++)
+        array[i1][i]=array[i2][i];
+    array[i1][i]='\0';
+
+    for (i=0 ; temp[0][i]!='\0';i++)
+        array[i2][i]=temp[0][i];
+    array[i2][i]='\0';
+    //print_the_array_of_strings(array,11);
+    
 }
 
 int compare_strings (char* str1,char* str2) {
@@ -97,7 +113,7 @@ void bubble_sort (char array[][max_name_length], int size) {
     {
         if ( compare_strings(array[i],array[i+1]) == -1  )
         {
-            swap_pointers(array[i],array[i+1]);
+            swap_pointers(array,i,i+1);
         }
     }
     bubble_sort(array,size-1);
