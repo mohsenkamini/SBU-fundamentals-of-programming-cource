@@ -1,5 +1,5 @@
 #include <iostream>
-#define max_name_length 2001
+#define max_name_length 2003
 #define max_number_of_strings 2
 using namespace std;
 
@@ -108,7 +108,7 @@ bool check_new_strings_integrity (char words[][max_name_length]) {
     bool check_kratos=true;
     bool check_atreus=true;
 
-    for (int i=length_of_word(words[1])-2 , j=5 ; j >=0 ; j-- , i--) // -1 since we're not checking the 's'
+    for (int i=length_of_word(words[1])-2 , j=4 ; j >=0 ; j-- , i--) // -1 since we're not checking the 's'
     {
         //cout << "here words[1][i],kratos[j] : " << words[1][i] << "  " << kratos[j] << endl;
 
