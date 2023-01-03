@@ -1,5 +1,5 @@
 #include <iostream>
-#define max_name_length 2000
+#define max_name_length 2001
 #define max_number_of_strings 2
 using namespace std;
 
