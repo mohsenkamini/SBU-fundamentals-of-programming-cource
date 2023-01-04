@@ -102,8 +102,8 @@ bool check_new_strings_integrity (char words[][max_name_length]) {
     
     bool flag=true;
 
-    char kratos[]={' ','k','r','a','t','o'};
-    char atreus[]={' ','a','t','r','e','u'};
+    char kratos[]={'k','r','a','t','o'};
+    char atreus[]={'a','t','r','e','u'};
 
     bool check_kratos=true;
     bool check_atreus=true;
@@ -156,7 +156,6 @@ int main () {
             cout << "ERROR!";
             return 1;
     }
-
     translate(sentences);
 
     switch (check_new_strings_integrity(sentences)) {
