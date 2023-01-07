@@ -24,6 +24,11 @@ bool check_integrity (char words[][max_name_length]) {
 
     bool flag=true;
     for (int i=0 ; words[0][i]!= '\0' ; i++ ) {
+        if (i > 2000)
+        {
+            flag=false;
+            break;
+        }
         if (words[0][i] == ' ')
         {
             //cout << "1\n";
