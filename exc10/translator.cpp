@@ -74,20 +74,55 @@ void translate (char words[][max_name_length]) {
     int temp=0,i;
     for (i=0 ; words[0][i]!= '\0' ; i++ ) {
         temp=words[0][i]+difference;
-        if (temp >= 'A' && temp <= 'Z' )
-            words[1][i]=temp;
-        else
+        
+        if (words[0][i] >= 'A' && words[0][i] <= 'Z')
         {
-            if (temp >= 'a' && temp <= 'z' )
+                if (temp >= 'A' && temp <= 'Z' )
                 words[1][i]=temp;
-            else 
-            {   
-                if (temp-difference == ' ')
-                    words[1][i]=' ';
-                else
+            else
+            {
+                if (temp >= 'Z')
                     words[1][i]=temp-26;
+                if (temp <= 'A')
+                    words[1][i]=temp+26;
             }
         }
+        else
+        {
+            if (words[0][i] >= 'a' && words[0][i] <= 'z')
+            {
+                    if (temp >= 'a' && temp <= 'z' )
+                    words[1][i]=temp;
+                else
+                {
+                    if (temp >= 'z')
+                        words[1][i]=temp-26;
+                    if (temp <= 'a')
+                        words[1][i]=temp+26;
+                }
+            }
+            else
+            {
+                if (temp - difference == ' ')
+                    words[1][i]=' ';
+            }
+        }
+        //else
+        //{
+        //    if (temp >= 'a' && temp <= 'z' )
+        //        if (words[0][i] >= 'a' && words[0][i] <= 'z')
+        //            words[1][i]=temp;
+        //        else
+        //            words[1][i]=temp-26;
+        //    else 
+        //    {   
+        //        continue;
+        //        //else
+        //        //    if (words[0][i] >= 'a' && words[0][i] <= 'z')
+        //        //    words[1][i]=temp-26;
+        //    }
+        //}
+    
     }
     words[1][i]='\0';
 
