@@ -8,4 +8,7 @@ enum season {
 int main () {
     season s1=Spring;
     season s2=Summer;
+
+    cout << s1 << endl << s2;
+
 }
